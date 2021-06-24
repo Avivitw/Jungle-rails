@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @line_items = LineItem.where(order_id: params[:id] ) 
   end
 
   def create
@@ -19,7 +20,7 @@ class OrdersController < ApplicationController
     redirect_to cart_path, flash: { error: e.message }
   end
 
-  private
+private 
 
   def empty_cart!
     # empty hash means no products in cart :)

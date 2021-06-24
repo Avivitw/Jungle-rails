@@ -8,6 +8,41 @@
     <h4>Thank you for your order!</h4>
   </div>
 
+  <div class="panel panel-default products">
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">Product</th>
+          <th>Price</th>
+          <th>Quantities</th>
+          <th>Total amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @line_items %>
+        
+        <tr>
+          <td colspan="4">
+            Order Total
+          </td>  
+          <td>
+            <%= humanized_money_with_symbol @order.total_cents %>
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Order by
+          </td> 
+          <td colspan="4"> 
+            <%= @order.email %>
+          </td>
+        </tr>
+        </tbody>
+    </table>
+
+  </div>
+
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
 </section>
