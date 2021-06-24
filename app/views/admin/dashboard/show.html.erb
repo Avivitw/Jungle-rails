@@ -1,2 +1,26 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+
+<div class="container bootstrap snippet">
+  <div class="row">
+    <div class="col-lg-2 col-sm-6">
+      <div class="circle-tile ">
+        <div class="circle-tile-heading dark-blue"><i class="fas fa-store fa-3x"></i></div>
+        <div class="circle-tile-content dark-blue">
+          <div class="circle-tile-description text-faded"> Products</div>
+          <div class="circle-tile-number text-faded "><%=@products_count %></div>
+          <a class="circle-tile-footer" href="/admin/products">More Info <i class="fa fa-chevron-circle-right"></i></a>
+        </div>
+      </div>
+    </div>
+     
+    <div class="col-lg-2 col-sm-6">
+      <div class="circle-tile ">
+        <div class="circle-tile-heading red"><i class="fa  fa-clipboard fa-fw fa-3x"></i></div>
+        <div class="circle-tile-content red">
+          <div class="circle-tile-description text-faded"> Categories </div>
+          <div class="circle-tile-number text-faded "><%=@categories %></div>
+          <%# <a class="circle-tile-footer" href="#">More Info<i class="fa fa-chevron-circle-right"></i></a> %>
+        </div>
+      </div>
+    </div> 
+  </div> 
+</div>  
