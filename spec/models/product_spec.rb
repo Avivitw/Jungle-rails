@@ -2,63 +2,42 @@ require 'rails_helper'
 
 RSpec.describe Product, type: :model do
   describe 'Validations' do
-      it 'should create and save a product' do
-          @category = Category.new(name: "Apparel")
-          @product = Product.create({
-          name:  'Hipster tie',
-          description: Faker::Hipster.paragraph(4),
-          quantity:10,
-          price: 25.00,
-          category: @category
+    before :each do
+      @category = Category.create(name: "Apparel")
+      @product = Product.create({
+      name:  'Hipster tie',
+      description: Faker::Hipster.paragraph(4),
+      quantity:10,
+      price_cents: 25.00,
+      category: @category
         })
+      end
+
+      it 'should create and save a product' do
         expect(@product).to be_valid
         puts @product.errors.full_messages
       end
 
       it 'should fail due to missing name coulmn' do
-          @category = Category.new(name: "Apparel")
-          @product = Product.create({
-          description: Faker::Hipster.paragraph(4),
-          quantity:10,
-          price: 25.00,
-          category: @category
-        })
+        @product.name = nil
         expect(@product).not_to be_valid
         puts @product.errors.full_messages
       end
 
       it 'should fail due to missing price coulmn' do
-          @category = Category.new(name: "Apparel")
-          @product = Product.create({
-          name:  "pants",
-          description: Faker::Hipster.paragraph(4),
-          quantity:10,
-          category: @category
-        })
+        @product.price_cents = nil
         expect(@product).not_to be_valid
         puts @product.errors.full_messages
       end
 
       it 'should fail due to missing quantity coulmn' do
-          @category = Category.new(name: "Apparel")
-          @product = Product.create({
-          name:  "shoes",
-          description: Faker::Hipster.paragraph(4),
-          price: 25.00,
-          category: @category
-        })
+        @product.quantity = nil
         expect(@product).not_to be_valid
         puts @product.errors.full_messages
       end
 
       it 'should fail due to missing category coulmn' do
-          @product = Product.create({
-          name:  "shoes",
-          description: Faker::Hipster.paragraph(4),
-          price: 25.00,
-          quantity:10,
-          
-        })
+        @product.category = nil
         expect(@product).not_to be_valid
         puts @product.errors.full_messages
       end
