@@ -6,9 +6,11 @@ This project is my solution to this exercise and published by me as part of my l
 
 ## Screenshots
 
-!["Full list"](https://github.com/Avivitw/scheduler/blob/master/docs/full_list.png?raw=true)
+!["Products page"](https://github.com/Avivitw/Jungle-rails/blob/master/docs/Screen%20Shot%202021-06-30%20at%208.45.35%20PM.png?raw=true)
 
-!["Edit and Delete"](https://github.com/Avivitw/scheduler/blob/master/docs/edit_delete.png?raw=true)
+!["Order page"](https://github.com/Avivitw/Jungle-rails/blob/master/docs/Screen%20Shot%202021-06-30%20at%208.46.25%20PM.png?raw=true)
+
+!["Admin dashboard"](https://github.com/Avivitw/Jungle-rails/blob/master/docs/admin_dashboard.gif?raw=true)
 
 ## Getting Started
 
